@@ -3,9 +3,15 @@
 	<title>Главная страница</title>
 	<script src="vendor/angular.js"></script>
 	<script src="vendor/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="app/assets/styles/main.css">
+	<link rel="stylesheet" type="text/css" href="app/assets/styles/reset.css">
 </head>
 <body ng-controller="ApplicationController">
-	<ng-view></ng-view>
+
+	{{init}}
+
+	<div ng-view></div>
+
 	<script src="app/application.js"></script>
 	<script src="app/routes.js"></script>
 	<script src="app/controllers.js"></script>
