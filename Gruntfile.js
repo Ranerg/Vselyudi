@@ -43,7 +43,7 @@ module.exports = function(grunt) {
     express:{
       all:{
         options:{
-          port:9000,
+          port:80,
           hostname:'localhost',
           bases:['public'],
           livereload:true

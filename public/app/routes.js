@@ -1,8 +1,26 @@
-application.config(function($routeProvider) {
-	$routeProvider
-		// route for the home page
-		.when('/', {
-			templateUrl : 'app/assets/views/layouts/index.html',
-			controller  : 'mainController'
+application.config(function ($stateProvider, $urlRouterProvider) {
+	$urlRouterProvider.otherwise('/');
+
+	$stateProvider
+		.state("main", {
+			//abstract: true,
+			url: "/",
+			templateUrl: 'app/assets/views/layouts/main.html',
 		})
+			.state("main.login", {
+				url: 'login',
+				views: {
+					'': {
+						templateUrl: 'app/assets/views/layers/main.index.html',
+					}
+				}
+			})
+			.state("main.forget", {
+				url: 'forget',
+				views: {
+					'': {
+						templateUrl: 'app/assets/views/layers/main.forget.html',
+					}
+				}
+			});
 });
