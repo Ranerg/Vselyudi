@@ -4,7 +4,7 @@ body {
   background: #e8ebed;
 }
 .clear {
-  cleat: both;
+  clear: both;
 }
 #baner {
   background: #41902e;
@@ -40,10 +40,14 @@ body {
 #main .content #aside {
   width: 300px;
   float: right;
+  font-family: Tahoma 14px;
 }
-#main .content #aside #registation,
-#main .content #aside #login {
-  padding-top: 20px;
+#main .content #aside #registation {
+  margin-top: 20px;
+}
+#main .content #aside #login,
+#main .content #aside #forget {
+  margin-top: 10px;
 }
 #main .content #aside form {
   /*input:not(:last-child){
@@ -51,7 +55,8 @@ body {
 					border: 1px solid red;
 				}*/
 }
-#main .content #aside form input {
+#main .content #aside form input,
+#main .content #aside form button {
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -61,22 +66,54 @@ body {
   font-family: Tahoma 14px;
   margin-bottom: 12px;
 }
-#main .content #aside form input[type="submit"] {
+#main .content #aside form button {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   height: 38px;
   padding: 0px 10px;
   line-height: 38px;
   background: #1197b8;
+  transition: background .4s;
+  float: left;
 }
-#main .content #aside form input[type="text"] {
+#main .content #aside form button:disabled {
+  background: #258ba4;
+}
+#main .content #aside form input {
   height: 36px;
-  line-height: 36px;
+  /*line-height: 36px;*/
   padding: 0px 10px;
   width: 300px;
+  outline: none;
+  border-left: 0px solid #FFF;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   background: rgba(0, 0, 0, 0.6);
+  transition: border-left 0.4s;
+  text-align: middle;
+  padding: 10px;
+  display: table-cell;
+  vertical-align: middle;
+}
+#main .content #aside form input.ng-valid.ng-dirty {
+  border: none;
+  border-left: 4px solid #00bb00;
+}
+#main .content #aside form input.ng-invalid-email.ng-dirty {
+  border: none;
+  border-left: 4px solid #bb0000;
+}
+#main .content #aside form a {
+  font-family: 'Tahoma';
+  font-size: 12px;
+  color: #FFF;
+  display: block;
+  margin-right: 20px;
+  margin-top: 12px;
+  float: right;
+}
+#main .content #aside form a:hover {
+  text-decoration: none;
 }
 #footer {
   width: 900px;

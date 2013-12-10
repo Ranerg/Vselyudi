@@ -1,0 +1,11 @@
+<div id="forget" ng-controller="MainFormForget">
+	<form name="forgetForm" novalidate>
+		<div tip="tip_email">
+			<input placeholder="E-mail" type="email" required ng-model="forget.email" >
+		</div>
+		<div tip="tip_submitForget">
+			<button ng-disabled="!forgetForm.$valid" disabled="disabled" ng-click="submitForget()">Восстановить</button>
+		</div>
+		<a href="#/login">Авторизация</a>
+	</form>
+</div>

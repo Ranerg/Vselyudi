@@ -22,7 +22,8 @@ module.exports = function(grunt) {
     less:{
       compile:{
         files:{
-          'public/app/assets/styles/main.css': 'less/main.less'
+          'public/app/assets/styles/main.css': 'less/main.less',
+          'public/app/assets/styles/profile.css': 'less/profile.less',
         }
       }
     },

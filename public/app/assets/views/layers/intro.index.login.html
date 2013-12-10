@@ -1,0 +1,14 @@
+<div id="login" ng-controller="MainFormLogin">
+	<form name="loginForm" novalidate>
+		<div tip="tip_email">
+			<input placeholder="E-mail" type="email" ng-model="login.email" type="text" required>
+		</div>
+		<div tip="tip_password">
+			<input placeholder="Пароль" ng-model="login.password" type="text" required>
+		</div>
+		<div tip="tip_submitLogin">
+			<button ng-disabled="!loginForm.$valid" disabled="disabled" ng-click="submitLogin()">Войти</button>
+		</div>
+		<a href="#/forget">Забыли пароль?</a>
+	</form>
+</div>

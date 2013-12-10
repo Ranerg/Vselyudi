@@ -5,7 +5,7 @@ body{
 }
 
 .clear{
-	cleat:both;
+	clear:both;
 }
 
 .rounded-corners (@radius: 5px) {
@@ -60,14 +60,19 @@ body{
 		#aside{
 			width: 300px;
 			float: right;
+			font-family: Tahoma 14px;
 
-			#registation, #login{
-				padding-top: 20px;
+			#registation{
+				margin-top: 20px;
+			}
+
+			#login, #forget{
+				margin-top: 10px;
 			}
 
 			form{
 				
-				input{
+				input, button{
 					.rounded-corners(5px);
 					display: block;
 					border: none;
@@ -80,23 +85,76 @@ body{
 					margin-bottom: 12px;
 					border: 1px solid red;
 				}*/
-
-				input[type="submit"]{
+				@button_color_submit : #1197b8;
+				button{
 					box-shadow: 0px 2px 2px rgba(0,0,0,.1);
 					height: 38px;
 					padding: 0px 10px;
 					line-height: 38px;
-					background: #1197b8;
+						background: @button_color_submit;
+					transition: background .4s;
+					float: left;
 				}
 
-				input[type="text"]{
+				button:disabled{
+					background: desaturate(@button_color_submit, 20%);
+				}
+
+				input{
 					height: 36px;
-					line-height: 36px;
+					/*line-height: 36px;*/
 					padding: 0px 10px;
 					width: 300px;
+					outline:none;
+					border-left: 0px solid #FFF;
 					.box-sizing();
 					background: rgba(0, 0, 0, .6);
+					transition: border-left .4s;
+					text-align: middle;
+					padding:10px;
+					  display: table-cell;
+    
+					vertical-align: middle;
 				}
+				
+
+				.ng-validation_decoration(@color){
+					border:none;
+					border-left:4px solid @color;
+				}
+
+				.ng-validation(@status) when (@status = 'valid') {
+					.ng-validation_decoration(#0B0);
+				}
+
+				.ng-validation(@status) when (@status = 'invalid') {
+					.ng-validation_decoration(#B00);
+				}
+
+				input.ng-valid.ng-dirty{
+					.ng-validation('valid');
+				}
+				input.ng-invalid-email.ng-dirty{
+					.ng-validation('invalid');
+				}
+
+
+			
+				
+				a{
+					font-family: 'Tahoma';
+					font-size: 12px;
+					color: #FFF;
+					display: block;
+					margin-right:20px;
+					margin-top: 12px;
+					float: right;
+
+					&:hover{
+						text-decoration:none;
+					}
+				}
+
 			}
 		}
 	}

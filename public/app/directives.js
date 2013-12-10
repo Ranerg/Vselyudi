@@ -4,7 +4,7 @@ application.directive('tip', function () {
 		transclude: 'element',
 		replace: true,
 		scope: {
-			tip: '@'
+			tip: '=',
 		},
 		templateUrl: 'app/assets/views/layers/tip_wrap.html',
 		/*  controller:function($scope, $timeout){
@@ -18,7 +18,6 @@ application.directive('tip', function () {
 			var tip = element.find('.tip');
 
 			$scope.$watch('tip', function (newValue, oldValue) {
-				console.log(tip.innerHeight() + " " + input.innerHeight());
 				inputHeight = input.innerHeight();
 				tipHeight = tip.innerHeight();
 
@@ -26,16 +25,12 @@ application.directive('tip', function () {
 
 				if (offset) offset = offset / 2;
 
-				console.log(offset);
 				tip.css({
 					top: -offset
 				});
 			}, true);
 
 			input.focus(function () {
-				console.log($scope)
-				$scope.tip += "1";
-				$scope.$apply();
 				tip.addClass('show');
 			});
 
@@ -44,4 +39,20 @@ application.directive('tip', function () {
 			});
 		},
 	};
+});
+
+
+application.directive('exit', function ($state, Auth){
+	return {
+		restrict: 'A',
+		link: function ($scope, elemen, attrs ){
+			$scope.loggout = function (){
+				Auth.exit({}, function(){
+					alert('Вы уходите?:) Заходите к нам еще, мы рады вас видеть:)');
+					$state.go('main');
+				});
+			};
+		}
+	};
+
 });

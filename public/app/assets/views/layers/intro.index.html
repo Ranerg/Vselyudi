@@ -1,0 +1,21 @@
+<div id="registation" ng-controller="MainFormRegistation">
+	<form name='registrationForm' novalidate>
+		<div tip="tip_email">
+			<input  placeholder="E-mail" ng-model="register.email" required type="email">
+		</div>
+		<div tip="tip_firstname">
+			<input placeholder="Имя" ng-model="register.firstname" required type="text">
+		</div>
+		<div tip="tip_lastname">
+			<input placeholder="Фамилия" ng-model="register.lastname" required type="text">
+		</div>
+		<div tip="tip_password">
+			<input  placeholder="Пароль" ng-model="register.password" required type="text">
+		</div>
+		<div tip="tip_registration">
+			<button ng-disabled="!registrationForm.$valid" disabled="disabled" ng-click="submitRegistation()">Зарегистрировать меня</button>
+		</div>
+		<div class="clear"></div>
+	</form>
+</div>
+<div ui-view></div>
